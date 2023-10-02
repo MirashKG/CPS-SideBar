@@ -1,0 +1,36 @@
+
+
+@mixin laptop-m {
+	@media (max-width: #{$screen-laptop-m-max}) {
+		@content;
+	}
+}
+
+@mixin tablet-m {
+	@media (max-width: #{$screen-tablet-m-max}) {
+		@content;
+	}
+}
+
+@mixin mobile-l {
+	@media (max-width: #{$screen-mobile-l-max}) {
+		@content;
+	}
+}
+@mixin mobile-s {
+	@media (max-width: #{$screen-mobile-s-max}) {
+		@content;
+	}
+}
+
+@mixin tablet-m-vertical {
+	@media (max-height: #{$screen-tablet-m-max}) {
+		@content;
+	}
+}
+
+@mixin laptop-m-vertical {
+	@media (max-height: #{$screen-laptop-m-max}) {
+		@content;
+	}
+}
