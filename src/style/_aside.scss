@@ -9,66 +9,64 @@
 }
 
 .aside {
-  &__hat {
+  .header {
     padding-top: 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &__wrapper {
+      display: flex;
+      align-items: center;
+    }
+    &__logo {
+      margin-left: 16px;
+    }
   }
-  &__wrapper {
-    display: flex;
-    align-items: center;
-  }
-  &__logo {
-    margin-left: 16px;
-  }
-  &__btn {
-    @include brightRedBtn;
-  }
-  &__navbar {
+  .navbar {
     display: flex;
     flex-direction: column;
     gap: 32px;
     margin-top: 50px;
+    &__link {
+      position: relative;
+      color: $text-color;
+      font-family: 'TT Lakes';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      transition: all 0.2s ease;
+      &:hover {
+        color: $text-hover-color;
+        transition: all 0.2s ease;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -24px;
+        width: 4px;
+        height: 32px;
+        opacity: 0;
+        transform: translateY(-50%);
+        background: $brightBlue-lineMenu-color;
+        border-radius: 0 5px 5px 0;
+        transition: all 0.2s ease;
+      }
+      &:hover::before {
+        opacity: 1;
+        transition: all 0.2s ease;
+      }
+      &-active,
+      &-active::before {
+        color: $text-hover-color;
+        opacity: 1;
+      }
+    }
   }
-  &__link {
-    position: relative;
-    color: $text-color;
-    font-family: 'TT Lakes';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: -0.2px;
-    transition: all 0.2s ease;
-    &:hover {
-      color: $text-hover-color;
-      transition: all 0.2s ease;
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: -24px;
-      width: 4px;
-      height: 32px;
-      opacity: 0;
-      transform: translateY(-50%);
-      background: $brightBlue-lineMenu-color;
-      border-radius: 0 5px 5px 0;
-      transition: all 0.2s ease;
-    }
-    &:hover::before {
-      opacity: 1;
-      transition: all 0.2s ease;
-    }
-    &-active,
-    &-active::before {
-      color: $text-hover-color;
-      opacity: 1;
-    }
-  }
-  &__contact-wrapper {
+  
+  .footer {
     
     margin-top: 380px;
     @include laptop-m-vertical {
@@ -80,57 +78,59 @@
       position: static;
       margin-top: 30px;
     }
-    
-  }
-  &__contact-btn {
-    display: flex;
-    gap: 16px;
-  }
-  &__email {
-    display: block;
-    margin-top: 16px;
-    color: $text-color;
-    font-family: 'TT Lakes';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: -0.2px;
-    transition: all 0.2s linear;
-    &:hover {
-      color: $main-color;
-      transition: all 0.2s linear;
+    &__wrapper {
+      display: flex;
+      gap: 16px;
     }
-  }
-  &__phone {
-    display: block;
-    margin-top: 12px;
-    color: $text-color;
-    font-family: 'TT Lakes';
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 32px;
-    letter-spacing: -0.6px;
-    transition: all 0.2s linear;
-    &:hover {
-      color: $main-color;
+    &__email {
+      display: block;
+      margin-top: 16px;
+      color: $text-color;
+      font-family: 'TT Lakes';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.2px;
       transition: all 0.2s linear;
+      &:hover {
+        color: $main-color;
+        transition: all 0.2s linear;
+      }
     }
-  }
-  &__lang-item {
-    margin-top: 40px;
-    color: $text-color;
-    font-family: 'TT Lakes';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: -0.2px;
-    transition: all 0.2s ease;
-    &:hover {
-      color: $text-hover-color;
+    &__phone {
+      display: block;
+      margin-top: 12px;
+      color: $text-color;
+      font-family: 'TT Lakes';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      transition: all 0.2s linear;
+      &:hover {
+        color: $main-color;
+        transition: all 0.2s linear;
+      }
+    }
+    &__item {
+      margin-top: 40px;
+      color: $text-color;
+      font-family: 'TT Lakes';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.2px;
       transition: all 0.2s ease;
+      &:hover {
+        color: $text-hover-color;
+        transition: all 0.2s ease;
+      }
     }
   }
+  
+  
+  
 }
